@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Vehicles - Neno Sacco</title>
+    <link rel="stylesheet" href="schedule-vehicles.css">
+    <script src="schedule-vehicles.js" defer></script> <!-- Include JS file -->
+</head>
+<body>
+    <header>
+        <h1>Neno Sacco - Schedule Vehicles</h1>
+        <button id="logout-btn" onclick="window.location.href='admin-login.html'">Logout</button>
+    </header>
+
+    <main>
+        <section>
+            <h2>Schedule a Vehicle</h2>
+            <form id="schedule-form" action="schedule_vehicle.php" method="POST">
+                <label for="vehicle_numberplate">Vehicle Numberplate:</label>
+                <input type="text" id="vehicle_numberplate" name="vehicle_numberplate" required>
+
+                <label for="driver_name">Driver Name:</label>
+                <input type="text" id="driver_name" name="driver_name" required>
+
+                <label for="route">Route:</label>
+                <select id="route" name="route" required>
+                    <option value="Embu to Nairobi">Embu to Nairobi</option>
+                    <option value="Nairobi to Embu">Nairobi to Embu</option>
+                </select>
+
+                <label for="travel_date">Travel Date:</label>
+                <input type="date" id="travel_date" name="travel_date" required>
+
+                <label for="travel_time">Travel Time:</label>
+                <select id="travel_time" name="travel_time" required>
+                    <option value="5:00am">5:00am</option>
+                    <option value="8:00am">8:00am</option>
+                    <option value="12:00pm">12:00pm</option>
+                    <option value="4:00pm">4:00pm</option>
+                    <option value="8:00pm">8:00pm</option>
+                </select>
+
+                <button type="submit">Schedule Vehicle</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Scheduled Vehicles</h2>
+            <div id="schedule-table-container">
+                <?php include 'fetch_scheduled_vehicles.php'; ?>
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>

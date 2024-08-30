@@ -1,0 +1,130 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* General body styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    flex: 1; /* Allows the main content to grow and push the footer down */
+    padding: 20px;
+}
+
+.navigation {
+    background-color: rgba(0, 0, 255, 0.8); /* Blue background with transparency */
+    overflow: hidden;
+    padding: 0; /* Remove default padding */
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation ul li {
+    margin: 0; /* Remove default margin */
+}
+
+.navigation ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and text color */
+}
+
+.navigation ul li a:hover {
+    background-color: rgba(0, 0, 139, 0.8); /* Darker blue on hover */
+    color: #ffeb3b; /* Yellow text color on hover */
+}
+
+
+/* Main section styles */
+.intro, .services, .animation {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Intro section */
+.intro {
+    text-align: center;
+}
+
+.intro h1 {
+    color: blue;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Services section */
+.services h2 {
+    color: #007bff;
+}
+
+/* Animation section */
+.animation {
+    text-align: center;
+}
+
+.animation h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.animation-box {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 8px;
+    animation: bounce 1.5s infinite;
+}
+
+.animation-box:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.animation-box:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Reports</title>
+    <link rel="stylesheet" href="report-styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Booking and Vehicle Reports</h1>
+
+        <!-- Report Generation Form -->
+        <form action="generate_report.php" method="POST">
+            <label for="report_date">Select Date:</label>
+            <input type="date" id="report_date" name="report_date" required>
+            <button type="submit">Generate Report</button>
+        </form>
+
+        <!-- Display Report Details -->
+        <div id="report_details">
+            <?php
+            // Include the PHP script to display reports if needed
+            include 'display_reports.php';
+            ?>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    color: #333;
+    position: relative; /* Ensure relative positioning for background animations */
+}
+
+/* Navigation Bar Styles */
+.navigation {
+    background-color: rgba(0, 0, 255, 0.8); /* Blue background with transparency */
+    overflow: hidden;
+    padding: 0; /* Remove default padding */
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation ul li {
+    margin: 0; /* Remove default margin */
+}
+
+.navigation ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and text color */
+}
+
+.navigation ul li a:hover {
+    background-color: rgba(0, 0, 139, 0.8); /* Darker blue on hover */
+    color: #ffeb3b; /* Yellow text color on hover */
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form and Select Styles */
+.journey-selection, .stations, .vehicle-selection {
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Stations Styles */
+.stations {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stations div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Vehicle Styles */
+.vehicle-selection {
+    margin-top: 20px;
+}
+
+/* Seat Layout Styles */
+.seat-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center seats within the layout */
+    margin: 20px 0; /* Add spacing around the layout */
+}
+
+.seat-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center seats in each column */
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border: 1px solid #000;
+    margin: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.seat.selected {
+    background-color: red;
+}
+
+.driver-seat {
+    background-color: #ccc;
+}
+
+/* Hidden Class */
+.hidden { 
+    display: none; 
+}
+
+/* Button Styles */
+#book-now {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Add spacing above the button */
+}
+
+#book-now:hover {
+    background-color: #218838;
+}
+
+/* Payment Box Styles */
+#payment-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Centered and with margin from the top */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Maximum width */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#payment-amount {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Adjust for padding */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Animated Text Styles */
+.animated-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: textAnimation 12s infinite;
+}
+
+@keyframes textAnimation {
+    0% { transform: translateY(100%); }
+    25% { transform: translateY(0%); }
+    50% { transform: translateY(-100%); }
+    75% { transform: translateY(0%); }
+    100% { transform: translateY(100%); }
+}
+/* Payment Box Styles */
+/* Ensure you have CSS to handle hidden and visible classes */
+#payment-box.hidden {
+    display: none; /* Hide the payment box when hidden */
+}
+
+#payment-box.visible {
+    display: block; /* Show the payment box when visible */
+    /* Additional styling for visibility if needed */
+}
+
+
+
+
+/* Background Animation Styles */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/happy.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    animation: backgroundChange 21s infinite;
+}
+
+@keyframes backgroundChange {
+    0% { background-image: url('images/confort.jpg'); }
+    14% { background-image: url('images/Happy-Journey-Wishes.jpg'); }
+    28% { background-image: url('images/happy.jpg'); }
+    42% { background-image: url('images/ride.jpg'); }
+    57% { background-image: url('images/safejrn.jpg'); }
+    71% { background-image: url('images/travell.jpg'); }
+    85% { background-image: url('images/window.jpg'); }
+    100% { background-image: url('images/happy.jpg'); }
+}

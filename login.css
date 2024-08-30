@@ -1,0 +1,121 @@
+/* Set a background image for the whole page */
+h1 {
+    color: blue; /* Change text color to blue */
+    font-size: 36px; /* Increase font size */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    text-align: center; /* Center the text horizontally */
+    margin-top: 10px; /* Add some margin at the top */
+}
+
+body {
+    background-image: url('images/nenosaco.png'); /* Replace with your background image path */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Style the header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #fff; /* Text color to stand out against the background */
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style the form container */
+.form-container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+/* Style the form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+.management-login {
+    margin-top: 20px; /* Adds some space above the management login button */
+    text-align: center; /* Centers the button horizontally */
+}
+
+.management-link {
+    display: inline-block; /* Makes the link look like a button */
+    padding: 10px 20px; /* Adds padding around the text */
+    background-color: #4CAF50; /* Sets the background color to green */
+    color: white; /* Sets the text color to white */
+    text-decoration: none; /* Removes the underline from the text */
+    border-radius: 5px; /* Adds rounded corners to the button */
+    font-size: 16px; /* Increases the font size */
+}
+
+.management-link:hover {
+    background-color: #45a049; /* Changes the button color on hover */
+}
+
+
+/* Style the link to switch to the registration page */
+.switch-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.switch-link:hover {
+    text-decoration: underline;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+/* Styles for the H1 Title */

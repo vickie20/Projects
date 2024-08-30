@@ -1,0 +1,134 @@
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f4f8; /* Light background for the body */
+}
+
+header {
+    background-color: #004085; /* Darker blue for the header */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Align navigation items to the right */
+    background-color: #0056b3; /* Mid-blue for the navigation */
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #007bff; /* Bright blue on hover */
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #007bff; /* Bright blue accent */
+}
+
+.dashboard-section h2 {
+    color: #0056b3; /* Mid-blue for headings */
+}
+
+footer {
+    background-color: #004085; /* Match header color */
+    padding: 15px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+#logout-btn {
+    background-color: #dc3545; /* Bright red for the logout button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Additional Styling for Professional Look */
+body {
+    background-color: #e9ecef; /* Light grayish-blue background */
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+p {
+    color: #495057; /* Darker gray for better readability */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007bff; /* Bright blue for table header */
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for alternating row colors */
+}
+
+table tr:hover {
+    background-color: #e9ecef; /* Light grayish-blue on hover */
+}

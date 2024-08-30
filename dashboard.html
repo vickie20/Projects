@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Neno Sacco Management Dashboard</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="manage_bookings.html" onclick="showSection('manage-bookings')">Manage Bookings</a></li>
+            <li><a href="schedule_vehicles.html" onclick="showSection('schedule-vehicles')">Schedule Vehicles</a></li>
+            <li><a href="report.html" onclick="showSection('generate-reports')">Generate Reports</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="manage-bookings" class="dashboard-section">
+            <h2>Manage Bookings</h2>
+            <div id="booking-table-container">
+                <!-- Booking table will be loaded here -->
+            </div>
+        </section>
+        <section id="schedule-vehicles" class="dashboard-section">
+            <h2>Schedule Vehicles</h2>
+            <p>Here you can assign vehicles and drivers to specific travel times.</p>
+            <!-- Add your vehicle scheduling functionality here -->
+        </section>
+        <section id="generate-reports" class="dashboard-section">
+            <h2>Generate Reports</h2>
+            <p>Here you can generate and view various reports.</p>
+            <!-- Add your report generation functionality here -->
+        </section>
+    </main>
+    
+    <footer>
+        <button id="logout-btn" onclick="window.location.href='logout.php'">Logout</button>
+    </footer>
+
+    <script src="dashboard.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>

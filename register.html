@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="register.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+            
+            <!-- Existing user login link -->
+            <a href="login.html" class="switch-link">Already have an account? Login here.</a>
+            
+            <!-- Management login button -->
+            <div class="management-login">
+                <a href="admin-register.html" class="management-link">Management Login</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neno Sacco Booking Dashboard</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <ul>
+            <li><a href="login.html" id="logout">Logout</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact.php">Feedback</a></li>
+            <li><a href="mailto:nenosacco@yahoo.com">Email Us</a></li>
+            <li><a href="booking.html">Booking Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Neno Sacco Booking Dashboard</h1>
+        <form id="booking-form">
+            <!-- Journey Selection -->
+            <div class="journey-selection">
+                <label for="route">Select Route:</label>
+                <select id="route" name="route" required>
+                    <option value="embu-nairobi">Embu to Nairobi</option>
+                    <option value="nairobi-embu">Nairobi to Embu</option>
+                </select>
+            </div>
+
+            <!-- Vehicle Selection -->
+            <div class="vehicle-selection">
+                <label for="vehicle">Select Vehicle:</label>
+                <select id="vehicle" name="vehicle" required>
+                    <option value="" disabled selected>Select a Vehicle</option>
+                    <option value="14-seater">14-Seater Vehicle</option>
+                    <option value="11-seater">11-Seater Vehicle</option>
+                </select>
+            </div>
+
+            <!-- Date Selection -->
+            <div class="date-selection">
+                <label for="travel-date">Select Date:</label>
+                <input type="date" id="travel-date" name="travel_date" required>
+            </div>
+
+            <!-- Time Selection -->
+            <div class="time-selection">
+                <label for="travel-time">Select Time:</label>
+                <select id="travel-time" name="travel_time" required>
+                    <option value="05:00:00">5:00 AM</option>
+                    <option value="08:00:00">8:00 AM</option>
+                    <option value="12:00:00">12:00 PM</option>
+                    <option value="16:00:00">4:00 PM</option>
+                    <option value="20:00:00">8:00 PM</option>
+                </select>
+            </div>
+
+            <!-- Seat Layouts -->
+            <div class="seat-layouts">
+                <div class="vehicle hidden" id="14-seater">
+                    <h3>14-Seater Vehicle</h3>
+                    <div class="seat-layout" id="layout-14">
+                        <!-- Seat layout for 14-seater -->
+                        <div class="seat-column">
+                            <div class="seat driver-seat"></div> <!-- Driver -->
+                            <div class="seat" id="seat-14-1"></div>
+                            <div class="seat" id="seat-14-2"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-14-3"></div>
+                            <div class="seat" id="seat-14-4"></div>
+                            <div class="seat" id="seat-14-5"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-14-6"></div>
+                            <div class="seat" id="seat-14-7"></div>
+                            <div class="seat" id="seat-14-8"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-14-9"></div>
+                            <div class="seat" id="seat-14-10"></div>
+                            <div class="seat" id="seat-14-11"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-14-12"></div>
+                            <div class="seat" id="seat-14-13"></div>
+                            <div class="seat" id="seat-14-14"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle hidden" id="11-seater">
+                    <h3>11-Seater Vehicle</h3>
+                    <div class="seat-layout" id="layout-11">
+                        <!-- Seat layout for 11-seater -->
+                        <div class="seat-column">
+                            <div class="seat driver-seat"></div> <!-- Driver -->
+                            <div class="seat" id="seat-11-1"></div>
+                            <div class="seat" id="seat-11-2"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-11-3"></div>
+                            <div class="seat" id="seat-11-4"></div>
+                            <div class="seat" id="seat-11-5"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-11-6"></div>
+                            <div class="seat" id="seat-11-7"></div>
+                            <div class="seat" id="seat-11-8"></div>
+                        </div>
+                        <div class="seat-column">
+                            <div class="seat" id="seat-11-9"></div>
+                            <div class="seat" id="seat-11-10"></div>
+                            <div class="seat" id="seat-11-11"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button id="book-now" type="button" class="btn btn-primary" onclick="displayBookingDetails()">Book Now</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Handle vehicle selection to show appropriate seat layout
+        document.getElementById('vehicle').addEventListener('change', function() {
+            var selectedVehicle = this.value;
+            document.querySelectorAll('.vehicle').forEach(function(vehicleDiv) {
+                vehicleDiv.classList.add('hidden'); // Hide all seat layouts
+            });
+
+            if (selectedVehicle) {
+                document.getElementById(selectedVehicle).classList.remove('hidden'); // Show the selected seat layout
+            }
+        });
+
+        // Handle seat selection toggle
+        document.querySelectorAll('.seat').forEach(function(seat) {
+            seat.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+
+        // Display booking details in a pop-up
+        function displayBookingDetails() {
+            var selectedRoute = document.getElementById('route').value;
+            var selectedVehicle = document.getElementById('vehicle').value;
+            var selectedSeats = document.querySelectorAll('.seat.selected').length;
+
+            if (!selectedVehicle) {
+                alert("Please select a vehicle type.");
+                return;
+            }
+
+            if (selectedSeats === 0) {
+                alert("Please select at least one seat.");
+                return;
+            }
+
+            var pricePerSeat = selectedVehicle === '11-seater' ? 500 : 450;
+            var totalAmount = selectedSeats * pricePerSeat;
+
+            var message = `Travel Route: ${selectedRoute}\nVehicle Type: ${selectedVehicle}\nSelected Seats: ${selectedSeats}\nTotal Amount: Ksh ${totalAmount}`;
+            alert(message);
+        }
+    </script>
+</body>
+</html>

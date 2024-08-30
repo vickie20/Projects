@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings - Neno Sacco</title>
+    <link rel="stylesheet" href="manage-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Neno Sacco - Manage Bookings</h1>
+        <button id="logout-btn" onclick="window.location.href='admin-login.html'">Logout</button>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Booking List</h2>
+            <div id="booking-table-container">
+                <!-- This will fetch and display the bookings from the database -->
+                <?php include 'fetch_bookings.php'; ?>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function confirmDelete(bookingId) {
+            if (confirm('Are you sure you want to delete this booking?')) {
+                window.location.href = 'delete_booking.php?id=' + bookingId;
+            }
+        }
+
+        function editBooking(bookingId) {
+            window.location.href = 'edit_booking.php?id=' + bookingId;
+        }
+    </script>
+</body>
+</html>
